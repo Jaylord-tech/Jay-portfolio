@@ -2,7 +2,7 @@
   "name": "project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Jayord-tech.github.io/jay-portfolio",
+  "homepage": "https://Jayord-tech.github.io/Jay-portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
