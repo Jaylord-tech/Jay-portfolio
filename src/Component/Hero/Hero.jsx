@@ -21,7 +21,7 @@ const Hero = () => {
           loop={true}
           cursor
           cursorStyle="_"
-          typeSpe ed={80}
+          typeSpeed={80}
           deleteSpeed={50}
           delaySpeed={1500}
         />
