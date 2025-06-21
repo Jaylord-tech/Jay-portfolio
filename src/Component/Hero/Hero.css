@@ -89,20 +89,7 @@ margin-bottom:15px ;
     opacity: 0.6;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.fade-in {
-  animation: fadeIn 1.2s ease-out forwards;
-}
 
 /*-------media query-----*/
 
@@ -129,4 +116,18 @@ margin-bottom:15px ;
     .subheading{
         font-size: 25px;
 }
+}
+
+@media(max-width: 500px){
+    .heading{
+         font-size: 22px;
+    }
+    .subheading{
+        font-size: 22px;
+}
+
+     .social img{
+    width: 35px;
+    margin-left: 8px;
+    }
 }

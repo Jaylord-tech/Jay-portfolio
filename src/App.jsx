@@ -4,10 +4,10 @@ import Hero from './Component/Hero/Hero.jsx'
 
 const App = () => {
   return (
-    <div>
+    <div> 
       <Navbar/>
       <Hero/>
-    </div>
+      </div>
   )
 }
 
