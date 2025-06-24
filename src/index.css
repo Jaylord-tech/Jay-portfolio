@@ -1,28 +1,62 @@
 *{
   font-family: sans-serif, arial;
   margin: 0;
-  
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient(55deg, rgb(141, 218, 248),rgb(77, 77, 244));;
+  color: rgb(33, 31, 33);
+}
+
+.container{
+  padding-left: 9%;
+  padding-right: 9%;
 }
 
 .btn{
   padding:10px 20px;
   border-radius: 20px;
+  border-bottom-left-radius: 0px;
   border: none;
   font-size: 15px;
   cursor: pointer;
   font-weight: 600;
-  background: navy;
+  background: rgb(51, 51, 175);
   color: aliceblue;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 
+.btn2{
+  padding:13px 23px;
+  border-radius: 20px;
+  border-bottom-left-radius: 0px;
+  border: 2px solid navy;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: navy;
+  transition: 0.5s;
+}
+.btn2:hover{
+  background-color: navy;
+  color: wheat;
+}
+
+
 .btn:hover{
-   background: rgba(0, 0, 128, 0.703);
+ border: navy;
+ background-color: aliceblue;
+ color: rgb(1, 1, 67);
 }
-.btn:active{
-  color:navy ;
-  background: aliceblue;
+
+.btn:active{ 
+ background-color: rgb(107, 104, 104);
 }
+.btn2:active{ 
+ background-color: rgb(41, 41, 233);
+}
+
 
 button svg{
    vertical-align: middle;
@@ -31,22 +65,21 @@ button svg{
 
 h1, h2, h3{
   font-size: bold;
-} 
+}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-  to {
+.fade-in{
+opacity: 0;
+transform: translateY(30px);
+animation: fade-in 0.5s linear forwards;
+}
+
+@keyframes fade-in{
+  100%{
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
 
-.fade-in {
-  animation: fadeIn 1.9s ease-out forwards;
-}
 
 /*-------media query-----*/
 

@@ -1,0 +1,98 @@
+.about{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 10%;
+}
+
+.about-img{
+    flex-basis: 27%;   
+}
+
+.about-img img{
+    max-width: 100%;
+    border-radius: 10px;
+    padding-bottom: 2px;
+}
+ 
+.about-content{
+    flex-basis: 62%;
+}
+
+.about-content h2 {
+   color: rgb(25, 9, 104);
+   width: 100%;
+}
+
+.about-content p{
+    color: rgb(40, 39, 40);
+    padding-top: 20px;
+}
+
+.personal-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.personal-details ul{
+    list-style: none;
+    
+}
+.personal-details .section-a{
+    flex-direction: 53%;
+    padding: 0px;
+}
+.personal-details .section-b{
+    flex-direction: 35%;
+    padding: 0;
+}
+
+.personal-details ul li{
+    padding-bottom: 20px;
+}
+
+.bullet{
+    vertical-align: middle;
+    color: navy;
+    margin-right: 2px;
+}
+
+
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+   
+  }
+
+  .about-img{
+    flex-basis: 20%;
+    margin-bottom: 30px;
+  }
+
+  .about-img img{
+    width: 70%;
+  }
+  
+  .about-content {
+    flex-basis: 100%;
+  }
+
+
+  .about-content {
+    margin-top: 20px;
+  }
+
+  .personal-details {
+    flex-direction: column;
+  }
+
+  .personal-details .section-a,
+  .personal-details .section-b {
+    width: 100%;
+ 
+  }
+}

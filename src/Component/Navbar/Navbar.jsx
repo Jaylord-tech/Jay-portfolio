@@ -5,22 +5,22 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 
 const Navbar = () => {
   const [menuToggle, setMenuToggle] = useState(false);
-const handburger = () => setMenuToggle(!menuToggle);
+  const handburger = () => setMenuToggle(!menuToggle);
 
 
 
   return (
     <nav className='navbar'>
-      <div className="logo">
+      <div className="logo fade-in">
         <h3>JAYLORD</h3><h2>TECH</h2>
       </div>
 
-        <ul className={`navbar-menu ${menuToggle ? '' : 'hide-nav'}`}>
+        <ul className={`navbar-menu ${menuToggle ? '' : 'hide-nav'} fade-in`}>
             <li>Home</li>
             <li>About Me</li>
             <li>Project</li>
             <li>Experience</li>
-            <li className='btn'>Contact</li>
+            <button className='btn'>Contact</button>
         </ul>
 
           {menuToggle ? (

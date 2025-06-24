@@ -8,6 +8,7 @@
     left: 0;
     right: 0;
     z-index: 100;
+    display: none;
 }
 
  .logo {
@@ -37,19 +38,15 @@
     align-items: center;
 }
 
-.navbar .btn {
-color:aliceblue ;
-}
-
-.navbar .btn:active{
-    background-color: aliceblue;
-    color: navy;
+.navbar ul .btn{
+    margin: 5px 10px;
 }
 
 .toggle{
-    
     display: none;
 }
+
+
 
 /*-----media query-------*/
 
@@ -102,4 +99,9 @@ color:aliceblue ;
      .close-icon {
         color: navy;
   }
+
+     .navbar ul .btn{
+          margin-top:  30px;
+} 
+
 }
