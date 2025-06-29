@@ -1,35 +1,71 @@
-import React, { useState } from 'react'
-import '../Navbar/Navbar.css'
-import { FaBars, FaTimes } from 'react-icons/fa'
-
+import React, { useState, useRef, useEffect } from 'react';
+import '../Navbar/Navbar.css';
+import {
+  FaBars,
+  FaTimes,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaGithub
+} from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuToggle, setMenuToggle] = useState(false);
-  const handburger = () => setMenuToggle(!menuToggle);
+  const menuRef = useRef(null);
 
+  const handleToggle = () => setMenuToggle(!menuToggle);
 
+  // 🔁 Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuToggle(false);
+      }
+    };
+
+    if (menuToggle) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuToggle]);
 
   return (
-    <nav className='navbar'>
+    <nav className="navbar">
       <div className="logo fade-in">
         <h3>JAYLORD</h3><h2>TECH</h2>
       </div>
 
-        <ul className={`navbar-menu ${menuToggle ? '' : 'hide-nav'} fade-in`}>
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Project</li>
-            <li>Experience</li>
-            <button className='btn'>Contact</button>
-        </ul>
+      {/* Wrap nav in ref for outside click */}
+      <ul
+        ref={menuRef}
+        className={`navbar-menu ${menuToggle ? '' : 'hide-nav'} fade-in`}
+      >
+        <li onClick={() => setMenuToggle(false)}>Home</li>
+        <li onClick={() => setMenuToggle(false)}>About Me</li>
+        <li onClick={() => setMenuToggle(false)}>Project</li>
+        <li onClick={() => setMenuToggle(false)}>Experience</li>
+        <li onClick={() => setMenuToggle(false)}>Contact</li>
+      </ul>
 
-          {menuToggle ? (
-              <FaTimes onClick={handburger} className='toggle close-icon' />
-            ) : (
-              <FaBars onClick={handburger} className='toggle' />
-            )}
+      <div className="social-icon">
+        <FaFacebook />
+        <FaInstagram />
+        <FaLinkedin />
+        <FaGithub />
+        <FaTwitter />
+      </div>
+
+      {menuToggle ? (
+        <FaTimes onClick={handleToggle} className="toggle close-icon" />
+      ) : (
+        <FaBars onClick={handleToggle} className="toggle" />
+      )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

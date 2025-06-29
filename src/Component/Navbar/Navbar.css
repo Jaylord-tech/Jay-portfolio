@@ -3,12 +3,12 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
-    margin-top: 20px;
+    padding: 20px 20px;
     top: 0;
     left: 0;
     right: 0;
+    background-color: rgb(10, 9, 12);
     z-index: 100;
-    display: none;
 }
 
  .logo {
@@ -17,69 +17,102 @@
      margin-left: 40px; 
       
 }
-
 .logo h3{
-     color: rgb(88, 33, 88);
+     color: rgb(147, 55, 147);
      font-family: 'Trebuchet MS';
 }
-
 .logo h2{
-    color: rgb(90, 66, 30);
+    color: rgb(141, 103, 47);
     font-family: 'Trebuchet MS';
 }
 
 .navbar ul li{
-    margin: 5px 10px;
+    padding-left: 15px;
     cursor: pointer;
     font-weight: 600;
     list-style: none;
     color:aliceblue ;
-     display: inline-block;
+    display: inline-block;
     align-items: center;
 }
 
-.navbar ul .btn{
-    margin: 5px 10px;
+.navbar ul li:hover{
+    color: #00BFFF;
+}
+.navbar ul li:active{
+    color:aliceblue;
 }
 
 .toggle{
     display: none;
 }
 
+.social-icon svg{
+    color:#00BFFF;
+    margin-left: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.social-icon svg:hover{
+    color: aliceblue;
+}
+.social-icon svg:active{
+    color: #00BFFF;
+}
 
 /*-----media query-------*/
+@media(max-width: 1300px){
+    .social-icon svg{
+    margin-left: 10px;
+    font-size: 20px;
+    }
+    .navbar ul li{
+    margin: 5px 12px;
 
-@media(max-width: 1000px){
-    .logo {
-        margin-left: 30px;
+    }
 }
+@media(max-width: 1100px){
+    .social-icon svg{
+    margin-left: 14px;
+    font-size: 18px;
+    }
+    .navbar ul li{
+    margin: 5px 10px;
+    font-size: 14px;
+    }
+    .logo {
+        margin-left: 28px;
+    }
      .logo h3{
-        font-size: 17px;
+        font-size: 15px;
      }
      .logo h2{
-        font-size: 23px;
+        font-size: 21px;
      }
-}   
+}    
 
-
-@media(max-width:750px){
-    
-
+@media(max-width:800px){
     .navbar ul li{
         color: rgb(1, 1, 67);
         margin-top: 35px;
         margin-right: 30px;
-        display: block;
-        
+        display: block; 
+        transition: 0.3s; 
+        font-size: 17px;
     }
-
+    .navbar ul li:hover{
+        color: rgb(21, 21, 212);
+       
+    }
     .toggle{
         display:block;
-        margin-right: 20px;
+        margin-right: 12px;
         color: rgb(182, 182, 185);
         cursor: pointer;
          font-size: 25px;
+         z-index: 200;
     }
      .navbar-menu {
         position: fixed;
@@ -89,17 +122,23 @@
         background-color: skyblue;
         padding-top: 80px;
         transition: 0.5s ease;
-        z-index: -1;
+        z-index: 150;
+        
 }
-
+       
+ .social-icon svg{
+    margin-left: 15px;
+    font-size: 20px;
+   
+    
+   
+    }
     .hide-nav {
         right: -270px;
 }
-
      .close-icon {
         color: navy;
   }
-
      .navbar ul .btn{
           margin-top:  30px;
 } 

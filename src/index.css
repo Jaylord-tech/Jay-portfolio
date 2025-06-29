@@ -92,5 +92,12 @@ animation: fade-in 0.5s linear forwards;
   }
 }
 
+@media(max-width: 500px){
+  .btn{
+    padding:6px 14px;
+    font-size:12px ;
+  }
+}
+
 
 
