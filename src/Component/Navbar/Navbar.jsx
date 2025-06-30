@@ -46,8 +46,8 @@ const Navbar = () => {
       >
         <li onClick={() => setMenuToggle(false)}>Home</li>
         <li onClick={() => setMenuToggle(false)}>About Me</li>
+        <li onClick={() => setMenuToggle(false)}>Skills</li>
         <li onClick={() => setMenuToggle(false)}>Project</li>
-        <li onClick={() => setMenuToggle(false)}>Experience</li>
         <li onClick={() => setMenuToggle(false)}>Contact</li>
       </ul>
 

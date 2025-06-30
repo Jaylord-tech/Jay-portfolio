@@ -73,6 +73,7 @@ transform: translateY(30px);
 animation: fade-in 0.5s linear forwards;
 }
 
+
 @keyframes fade-in{
   100%{
     opacity: 1;
@@ -102,8 +103,8 @@ animation: fade-in 0.5s linear forwards;
     font-size:12px ;
   }
 .container{
-  padding-left: 6%;
-  padding-right: 6%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 }
