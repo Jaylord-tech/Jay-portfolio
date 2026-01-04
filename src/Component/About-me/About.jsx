@@ -25,22 +25,21 @@ const About = () => {
 
         {/* Right Side: Content */}
         <div className="about-right">
-          <p className="about-intro">
-            I’m a frontend web developer focused on building modern, scalable,
-            and user-friendly web interfaces using current technologies.
+
+
+          <p className="about-summary">
+           I’m a frontend web developer with 
+           6 years of experience building modern, scalable,
+            and user-friendly web interfaces using current web technologies. 
+            I specialize in turning designs into clean, responsive,
+             and high-performance websites and applications.
           </p>
 
           <p className="about-summary">
-            I specialize in translating designs into clean, responsive, and
-            high-performance web applications. My approach combines attention
-            to detail, clean code practices, and a strong understanding of user
-            experience.
-          </p>
-
-          <p className="about-summary">
-            I enjoy collaborating on meaningful projects, solving real-world
-            problems, and continuously improving my skills to stay aligned with
-            modern web standards and best practices.
+           Over the years, I’ve built 40+ functional and well-designed websites, 
+           collaborating on meaningful projects and solving real-world problems. 
+           I focus on clean code, great user experience, and continuously
+            improving my skills to stay aligned with modern web standards.
           </p>
 
           {/* What I Do */}

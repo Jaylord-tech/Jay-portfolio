@@ -4,6 +4,7 @@
   padding: 100px 8%;
   display: flex;
   justify-content: center;
+
 }
 
 .about-container {
@@ -12,6 +13,7 @@
   flex-wrap: wrap;
   gap: 60px;
   max-width: 1200px;
+  margin-top: -50px;
 }
 
 /* ========== Left Section ========== */
@@ -88,13 +90,13 @@
 
 /* ========== Right Section ========== */
 .about-right {
-  flex: 1.5;
-  min-width: 320px;
+  flex: 1.1;
+  min-width: 250px;
 }
 
 .about-heading {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   position: relative;
 }
 
@@ -108,13 +110,6 @@
   background: #64FFDA;
 }
 
-.about-intro {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  color: #ddd;
-}
-
 .about-details ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -122,6 +117,7 @@
   list-style: none;
   margin-bottom: 25px;
   padding: 0;
+ 
 }
 
 .about-details li {
