@@ -8,6 +8,7 @@ import img2 from "/src/assets/portfolio-2.png";
 import img3 from "/src/assets/portfolio-3.png";
 import img4 from "/src/assets/portfolio-4.png";
 import img5 from "/src/assets/portfolio-5.png";
+import img6 from "/src/assets/portfolio-6.png";
 
 const portfolioData = [
   { 
@@ -35,6 +36,11 @@ const portfolioData = [
     link: "https://ricebyrice.com/",
     desc: "Built a clean, brand-focused website with React featuring scroll animations, product sections, and optimized image loading. Ensured consistent visual identity with reusable components and SEO-friendly structure."
   },
+  { 
+    img: img6, 
+    link: "https://www.outsydfashion.com/",
+    desc: "Developed a high-end fashion e-commerce platform emphasizing strong brand presence and seamless user experience. Implemented responsive, mobile-first interfaces, interactive product showcases, and intuitive navigation. Optimized performance using lazy loading and code splitting to deliver fast, smooth browsing across all devices."
+  }
 ];
 
 function Portfolio() {

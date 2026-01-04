@@ -5,17 +5,24 @@
   letter-spacing: 2px;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-background: #3f3f3f;
+  background: #3f3f3f;
   font-family: 'Poppins ', sans-serif;
   letter-spacing: 2px;
+  overflow-x: hidden; /* ADD THIS */
+  max-width: 100vw; /* ADD THIS */
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 
 .container{

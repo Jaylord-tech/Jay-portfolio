@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "./Contact.css";
 import {
   FaEnvelope,
+  FaTwitter,
   FaPhoneAlt,
   FaMapMarkerAlt,
   FaWhatsapp,
@@ -78,11 +79,6 @@ function Contact() {
             <span>+234 810 9500 453</span>
           </div>
 
-          <div className="info-item">
-            <FaMapMarkerAlt />
-            <span>Lagos, Nigeria</span>
-          </div>
-
           <h4 className="follow-title">Follow Me</h4>
           <div className="social-row">
             <a
@@ -92,6 +88,11 @@ function Contact() {
             >
               <FaWhatsapp />
             </a>
+
+            <a 
+              href="https://x.com/oyediranjaydev?s=21"
+              target="blank"
+              rel="noopener noreferrer"><FaTwitter /></a>
 
             <a
               href="https://www.linkedin.com/in/feranmi-oyediran/"

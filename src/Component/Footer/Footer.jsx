@@ -22,7 +22,9 @@ function Footer() {
               target="blank"
               rel="noopener noreferrer"><FaWhatsapp /></a>
 
-          <a href="#"><FaTwitter /></a>
+          <a href="https://x.com/oyediranjaydev?s=21"
+              target="blank"
+              rel="noopener noreferrer"><FaTwitter /></a>
 
           <a  href="https://www.linkedin.com/in/feranmi-oyediran/"
                   target="_blank"

@@ -1,8 +1,7 @@
 import React from "react";
 import "./About.css";
-import myPic from "../../assets/my-image.jpeg"; // replace with your image
+import myPic from "../../assets/my-image.jpeg";
 import cvFile from "../../assets/Feranmi-Oyediran-CV.pdf";
-
 
 const About = () => {
   return (
@@ -26,39 +25,58 @@ const About = () => {
 
         {/* Right Side: Content */}
         <div className="about-right">
-          <h2 className="about-heading">Introduction About Me</h2>
           <p className="about-intro">
-            Passionate frontend developer who loves building fast, user-friendly
-            interfaces with clean, responsive design.
+            I’m a frontend web developer focused on building modern, scalable,
+            and user-friendly web interfaces using current technologies.
           </p>
-
-          <div className="about-details">
-            <ul>
-              <li><strong>Birthday:</strong> 16 July 1998</li>
-              <li><strong>Phone:</strong> +234 810 950 0453</li>
-              <li><strong>City:</strong> Ibadan, Nigeria</li>
-              <li><strong>Age:</strong> 27</li>
-              <li><strong>Degree:</strong> Bachelor of Arts</li>
-              <li><strong>Freelance:</strong> Available</li>
-            </ul>
-          </div>
 
           <p className="about-summary">
-            Every pixel I push is backed by logic, creativity, and attention to
-            user experience. I aim to create interfaces that feel as good as they
-            look. Every component I build is tested for clarity, speed, and
-            purpose.
+            I specialize in translating designs into clean, responsive, and
+            high-performance web applications. My approach combines attention
+            to detail, clean code practices, and a strong understanding of user
+            experience.
           </p>
 
+          <p className="about-summary">
+            I enjoy collaborating on meaningful projects, solving real-world
+            problems, and continuously improving my skills to stay aligned with
+            modern web standards and best practices.
+          </p>
+
+          {/* What I Do */}
+          <div className="about-services">
+            <div className="service-item">
+              <h4>Frontend Development</h4>
+              <p>Building responsive and interactive user interfaces.</p>
+            </div>
+            <div className="service-item">
+              <h4>UI Implementation</h4>
+              <p>Turning designs into pixel-perfect web experiences.</p>
+            </div>
+            <div className="service-item">
+              <h4>Performance & Accessibility</h4>
+              <p>Optimizing speed, usability, and accessibility.</p>
+            </div>
+          </div>
+
+          {/* Buttons */}
           <div className="about-buttons">
             <a
-            href="mailto:oyediranjay@gmail.com?subject=Hiring%20Inquiry&body=Hello%20Jay,"
-            className="btn hire"
-          >
-            Hire Me
-          </a>
+              href="mailto:oyediranjay@gmail.com?subject=Hiring%20Inquiry&body=Hello%20Jay,"
+              className="btn hire"
+            >
+              Hire Me
+            </a>
 
-        <a href={cvFile} download target="_blank" rel="noopener noreferrer" className="btn download">Download CV</a>
+            <a
+              href={cvFile}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn download"
+            >
+              Download CV
+            </a>
           </div>
         </div>
       </div>

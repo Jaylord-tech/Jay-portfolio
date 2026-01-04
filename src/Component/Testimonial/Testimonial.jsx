@@ -1,111 +1,223 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Testimonial.css";
-
-import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaStar } from "react-icons/fa";
-
-import pic1 from "../../assets/profilePic-1.jpg";
-import pic2 from "../../assets/profilePic-2.jpg";
-import pic3 from "../../assets/profilePic-3.jpg";
-import pic4 from "../../assets/profilePic-4.jpg";
-import pic5 from "../../assets/profilePic-5.jpg";
 
 const testimonials = [
   {
-    img: pic1,
+    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
     name: "Catalina",
+    role: "Marketing Consultant",
     feedback:
-      "Amazing work! My leads doubled after the website upgrade. Clean, fast, and beautifully designed."
+      "Amazing work! My leads doubled after the website upgrade. Clean, fast, and beautifully designed.",
   },
   {
-    img: pic2,
-    name: "Michael Watt",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+    name: "Michael Adeshina",
+    role: "Product Designer",
     feedback:
-      "Your attention to detail is insane. You turned my designs into a flawless, responsive UI."
+      "Your attention to detail is insane. You turned my designs into a flawless, responsive UI.",
   },
   {
-    img: pic3,
+    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
     name: "Marilyn Dee",
+    role: "Startup Founder",
     feedback:
-      "You made my app feel premium. Smooth UI, perfect animations, and delivered ahead of time."
+      "You made my app feel premium. Smooth UI, perfect animations, and delivered ahead of time.",
   },
   {
-    img: pic4,
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
     name: "John Davis",
+    role: "Entrepreneur",
     feedback:
-      "You built more than a website, you built my brand. Clean, bold, and incredibly fast."
+      "You built more than a website, you built my brand. Clean, bold, and incredibly fast.",
   },
   {
-    img: pic5,
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
     name: "David Kim",
+    role: "Senior Developer",
     feedback:
-      "As a developer, I'm picky, but your work impressed me. Clean code and perfect performance."
-  }
+      "As a developer, I'm picky, but your work impressed me. Clean code and perfect performance.",
+  },
 ];
 
 function Testimonial() {
-  const slider = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(testimonials.length);
+  const [visibleCards, setVisibleCards] = useState(3);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [cardWidth, setCardWidth] = useState(0);
+  const intervalRef = useRef(null);
+  const trackRef = useRef(null);
+  const sliderRef = useRef(null);
 
-  const slideLeft = () => {
-    slider.current.scrollBy({ left: -350, behavior: "smooth" });
-  };
+  // Duplicate testimonials for infinite loop
+  const extendedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
-  const slideRight = () => {
-    slider.current.scrollBy({ left: 350, behavior: "smooth" });
-  };
-
-  // Auto-scroll (no loop)
+  // Calculate card width and visible cards based on screen size
   useEffect(() => {
-    const interval = setInterval(() => {
-      const sliderEl = slider.current;
-      if (!sliderEl) return;
+    const updateDimensions = () => {
+      if (sliderRef.current) {
+        const sliderWidth = sliderRef.current.offsetWidth;
+        let cards = 3;
+        let gap = 30;
 
-      const maxScroll = sliderEl.scrollWidth - sliderEl.clientWidth;
+        if (window.innerWidth >= 1200) {
+          cards = 3;
+          gap = 30;
+        } else if (window.innerWidth >= 600 && window.innerWidth < 1200) {
+          cards = 2;
+          gap = window.innerWidth >= 769 ? 24 : 20;
+        } else {
+          cards = 1;
+          gap = window.innerWidth >= 481 ? 18 : 16;
+        }
 
-      if (sliderEl.scrollLeft >= maxScroll) {
-        sliderEl.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        sliderEl.scrollBy({ left: 350, behavior: "smooth" });
+        setVisibleCards(cards);
+        
+        // Calculate card width: (container width - total gaps) / number of cards
+        const totalGaps = (cards - 1) * gap;
+        const width = (sliderWidth - totalGaps) / cards;
+        setCardWidth(width);
       }
-    }, 5000);
+    };
 
-    return () => clearInterval(interval);
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
   }, []);
+
+  // Auto-scroll continuously from right to left
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => prev + 1);
+    }, 3000);
+
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  // Reset position when reaching end (infinite loop effect)
+  useEffect(() => {
+    if (currentIndex >= testimonials.length * 2) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(testimonials.length);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            setIsTransitioning(true);
+          }, 50);
+        });
+      }, 500);
+    } else if (currentIndex <= 0) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(testimonials.length);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            setIsTransitioning(true);
+          }, 50);
+        });
+      }, 500);
+    }
+  }, [currentIndex]);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  // Calculate transform in pixels (like Owl Carousel)
+  const getTransformValue = () => {
+    if (cardWidth === 0) return 0;
+    
+    let gap = 30;
+    if (window.innerWidth >= 769 && window.innerWidth < 1200) {
+      gap = 24;
+    } else if (window.innerWidth >= 600 && window.innerWidth < 769) {
+      gap = 20;
+    } else if (window.innerWidth >= 481 && window.innerWidth < 600) {
+      gap = 18;
+    } else if (window.innerWidth < 481) {
+      gap = 16;
+    }
+    
+    // Calculate pixel offset: (cardWidth + gap) * currentIndex
+    return (cardWidth + gap) * currentIndex;
+  };
 
   return (
     <section className="testimonial-section">
-      <h2 className="section-title">Our Customer Feedback</h2>
-      <p className="section-subtitle">
-        Feedback that reflects the quality and passion behind every project.
-      </p>
+      <header className="testimonial-header">
+        <h2 className="section-title">Our Customer Feedback</h2>
+        <p className="section-subtitle">
+          Feedback that reflects the quality and care behind every project.
+        </p>
+      </header>
 
       <div className="slider-wrapper">
-        <button className="nav-btn left" onClick={slideLeft}>
-          <FaChevronLeft />
-        </button>
+        <div className="testimonial-slider" ref={sliderRef}>
+          <div 
+            ref={trackRef}
+            className="testimonial-track"
+            style={{
+              transform: `translate3d(-${getTransformValue()}px, 0px, 0px)`,
+              transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
+            }}
+          >
+            {extendedTestimonials.map((item, index) => (
+              <article 
+                className="testimonial-card" 
+                key={index}
+                style={{ width: cardWidth > 0 ? `${cardWidth}px` : 'auto' }}
+              >
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="profile-img"
+                  loading="lazy"
+                />
 
-        <div className="testimonial-slider" ref={slider}>
-          {testimonials.map((item, i) => (
-            <div className="testimonial-card" key={i}>
-              <img src={item.img} className="profile-img" alt={item.name} />
+                <h3 className="name">{item.name}</h3>
+                <p className="role">{item.role}</p>
 
-              <h3 className="name">{item.name}</h3>
+                <div className="stars">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#ff007f">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  ))}
+                </div>
 
-              {/* ⭐ Pink Stars Added */}
-              <div className="stars">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <FaStar key={s} className="star-icon" />
-                ))}
-              </div>
-
-              <FaQuoteLeft className="quote-icon" />
-              <p className="feedback">{item.feedback}</p>
-            </div>
-          ))}
+                <svg className="quote-icon" width="30" height="30" viewBox="0 0 24 24" fill="#ddd">
+                  <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+                <p className="feedback">{item.feedback}</p>
+              </article>
+            ))}
+          </div>
         </div>
 
-        <button className="nav-btn right" onClick={slideRight}>
-          <FaChevronRight />
-        </button>
+        <div className="nav-buttons-container">
+          <button
+            className="nav-btn left"
+            onClick={goToPrevious}
+            aria-label="Previous testimonial"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+
+          <button
+            className="nav-btn right"
+            onClick={goToNext}
+            aria-label="Next testimonial"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   );

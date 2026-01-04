@@ -173,6 +173,13 @@
   color: #ff007a;
 }
 
+.about-services{
+margin-top: 40px;
+margin-bottom: 40px;
+}
+.service-item{
+  margin-bottom: 20px;
+}
 
 
 /* ========================================================= */
