@@ -5,7 +5,7 @@
 
 /* GRID */
 .portfolio-grid {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 0 20px;   /* ✅ ADDED — prevents cards touching screen edges */
   display: grid;

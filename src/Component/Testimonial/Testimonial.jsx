@@ -1,39 +1,38 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Testimonial.css";
+import test1 from "/src/assets/test-pix.jpg";
+import test2 from "/src/assets/profilePic-5.jpg"
+import test3 from "/src/assets/profilePic-3.jpg"
+import test4 from "/src/assets/profilePic-4.jpg"
 
 const testimonials = [
   {
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
-    name: "Catalina",
-    role: "Marketing Consultant",
+    img: test1,
+    name: "Michael Adeshina",
     feedback:
       "Amazing work! My leads doubled after the website upgrade. Clean, fast, and beautifully designed.",
   },
   {
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-    name: "Michael Adeshina",
-    role: "Product Designer",
+    img:test2,
+    name: "Akintade Vincent",
     feedback:
       "Your attention to detail is insane. You turned my designs into a flawless, responsive UI.",
   },
   {
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
-    name: "Marilyn Dee",
-    role: "Startup Founder",
+    img:test4,
+    name: "Obatomi Bunmi",
     feedback:
       "You made my app feel premium. Smooth UI, perfect animations, and delivered ahead of time.",
   },
   {
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
-    name: "John Davis",
-    role: "Entrepreneur",
+    img: test3,
+    name:  "Sarahjane",
     feedback:
       "You built more than a website, you built my brand. Clean, bold, and incredibly fast.",
   },
   {
     img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
     name: "David Kim",
-    role: "Senior Developer",
     feedback:
       "As a developer, I'm picky, but your work impressed me. Clean code and perfect performance.",
   },

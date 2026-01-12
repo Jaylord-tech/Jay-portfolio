@@ -16,7 +16,7 @@ const Skill = () => {
       {/* ⭐ MAIN SKILL GRID */}
       <section className="skills-section">
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>Frontend Technologies</h3>
             <ul>
@@ -29,7 +29,7 @@ const Skill = () => {
           </div>
         </FadeSlide>
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>Frameworks & Libraries</h3>
             <ul>
@@ -41,7 +41,7 @@ const Skill = () => {
           </div>
         </FadeSlide>
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>Tools & Build Systems</h3>
             <ul>
@@ -53,7 +53,7 @@ const Skill = () => {
           </div>
         </FadeSlide>
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>UI/UX & Design</h3>
             <ul>
@@ -64,7 +64,7 @@ const Skill = () => {
           </div>
         </FadeSlide>
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>APIs & Integration</h3>
             <ul>
@@ -75,7 +75,7 @@ const Skill = () => {
           </div>
         </FadeSlide>
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>Testing & Debugging</h3>
             <ul>
@@ -85,7 +85,7 @@ const Skill = () => {
           </div>
         </FadeSlide>
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>Browser Optimization</h3>
             <ul>
@@ -96,7 +96,7 @@ const Skill = () => {
           </div>
         </FadeSlide>
 
-        <FadeSlide direction='fade-up' delay={300}>
+        <FadeSlide direction='fade-up' delay={150}>
           <div className="skills-group">
             <h3>Soft Skills</h3>
             <ul>
