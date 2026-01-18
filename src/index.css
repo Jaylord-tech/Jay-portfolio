@@ -12,7 +12,7 @@ html {
 
 body {
   margin: 0;
-  background: #3f3f3f;
+background: linear-gradient(135deg, #020617, #0f172a, #2f3e58);
   font-family: 'Poppins ', sans-serif;
   letter-spacing: 2px;
   overflow-x: hidden; /* ADD THIS */
