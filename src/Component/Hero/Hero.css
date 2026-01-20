@@ -294,30 +294,3 @@
   }
 }
 
-/* ========================================================
-   EXTRA SMALL (≤360px)
-======================================================== */
-@media (max-width: 360px) {
-  .heading {
-    font-size: 30px;
-  }
-
-  .hero {
-    padding-top: 90px;
-    padding-bottom: 100px;
-  }
-
-  .in-touch .btn {
-    width: 200px;
-    font-size: 14px;
-    height: 42px;
-  }
-
-  .social img {
-    width: 26px;
-  }
-
-  .hero-wave svg {
-    height: 150px;
-  }
-}
